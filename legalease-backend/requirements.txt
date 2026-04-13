@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+aiosqlite
+python-jose[cryptography]
+bcrypt
+python-multipart
+pdfplumber
+groq
+python-dotenv
+pydantic[email]
+email-validator
+cryptography
+python-docx
+rank_bm25

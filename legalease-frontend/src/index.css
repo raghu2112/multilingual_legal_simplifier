@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  body { 
+    background: white !important; 
+    color: black !important;
+  }
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+  nav, footer { display: none !important; }
+  .print-hidden { display: none !important; }
+  .print-only { display: block !important; }
+}
+
+@media screen {
+  .print-only { display: none !important; }
+}
+
+@layer base {
+  :root {
+    --paper-bg: #fdfbf7;
+    --navy-primary: #002147;
+    --gold-accent: #c5a059;
+    --legal-black: #1a1a1a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    color: var(--legal-black);
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .legal-font {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#002147] hover:bg-[#003366] text-white font-semibold px-6 py-3 rounded-sm border-b-2 border-[#c5a059] transition-all duration-200 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-stone-50 text-[#002147] font-semibold px-6 py-3 rounded-sm border border-[#002147] transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-stone-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#c5a059] focus:border-[#c5a059] transition-all duration-200 bg-white;
+  }
+
+  .card {
+    @apply bg-white rounded-sm shadow-[0_1px_3px_rgba(0, 0, 0, 0.1)] border border-stone-100 p-8;
+  }
+
+  .nav-link {
+    @apply text-white/90 hover:text-[#c5a059] font-medium transition-colors duration-200;
+  }
+}
+
+.legal-header {
+  @apply border-b-4 border-[#c5a059] pb-4 mb-8;
+}
